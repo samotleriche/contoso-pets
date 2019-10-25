@@ -13,3 +13,9 @@ steps:
   displayName: 'Run npm install'
   inputs:
     verbose: false
+- task: DotNetCoreCLI@2
+  displayName: 'Build the project - Release'
+  inputs:
+    command: 'build'
+    arguments: '--no-restore'
+    projects: '**/*.csproj'
