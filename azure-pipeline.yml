@@ -6,8 +6,8 @@ steps:
   inputs:
     version: 2.1.505
 - task: DotNetCoreCLI@2
-  displayName: 'Restore project dependencies'
+  displayName: 'Build project'
   inputs:
-    command: 'restore'
+    command: 'build'
+    arguments: '--no-restore --configuration Release'
     projects: '**/*.csproj'
-
