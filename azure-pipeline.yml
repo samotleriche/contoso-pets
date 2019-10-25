@@ -24,7 +24,7 @@ steps:
     command: 'build'
 
 - script: 'ls'
-  displayName: 'Compile Sass assets'
+  displayName: 'Compile Sass assetsss'
 - script: '
     ls
     pwd
