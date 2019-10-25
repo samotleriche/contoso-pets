@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/samotleriche/contoso-pets/src/ContosoPets.Api/ContosoPets.Api.csproj": {}
+    "/home/cdelabs/Desktop/ContosoPets.Api/ContosoPets.Api.csproj": {}
   },
   "projects": {
-    "/home/samotleriche/contoso-pets/src/ContosoPets.Api/ContosoPets.Api.csproj": {
+    "/home/cdelabs/Desktop/ContosoPets.Api/ContosoPets.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/samotleriche/contoso-pets/src/ContosoPets.Api/ContosoPets.Api.csproj",
+        "projectUniqueName": "/home/cdelabs/Desktop/ContosoPets.Api/ContosoPets.Api.csproj",
         "projectName": "ContosoPets.Api",
-        "projectPath": "/home/samotleriche/contoso-pets/src/ContosoPets.Api/ContosoPets.Api.csproj",
-        "packagesPath": "/home/samotleriche/.nuget/packages/",
-        "outputPath": "/home/samotleriche/contoso-pets/src/ContosoPets.Api/obj/",
+        "projectPath": "/home/cdelabs/Desktop/ContosoPets.Api/ContosoPets.Api.csproj",
+        "packagesPath": "/home/cdelabs/.nuget/packages/",
+        "outputPath": "/home/cdelabs/Desktop/ContosoPets.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/samotleriche/.nuget/NuGet/NuGet.Config"
+          "/home/cdelabs/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/samotleriche/.dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

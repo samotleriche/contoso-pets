@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ContosoPets.Api.Data;
 using ContosoPets.Api.Models;
+using System;
 
 namespace ContosoPets.Api.Controllers
 {
@@ -34,6 +35,12 @@ namespace ContosoPets.Api.Controllers
             }
 
             return product;
+        }
+
+        [HttpGet("test")]
+        public void runVode(long id)
+        {
+            Console.WriteLine("hi");
         }
 
         [HttpPost]

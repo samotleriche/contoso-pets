@@ -7,4 +7,7 @@
 [40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
       Hosting environment: Production
 [40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
-      Content root path: /home/samotleriche/contoso-pets/src/ContosoPets.Api
+      Content root path: /home/cdelabs/Desktop/ContosoPets.Api
+hi
+[40m[32minfo[39m[22m[49m: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

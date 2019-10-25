@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/samotleriche/.dotnet/store/|arch|/|tfm|",
-      "/home/samotleriche/.nuget/packages"
+      "/home/cdelabs/.dotnet/store/|arch|/|tfm|",
+      "/home/cdelabs/.nuget/packages"
     ]
   }
 }
