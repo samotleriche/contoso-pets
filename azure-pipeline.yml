@@ -25,8 +25,8 @@ steps:
 
 - script: 'ls'
   displayName: 'Compile Sass assetsss'
-- script: '
+  
+- script: |
     ls
     pwd
-'
   displayName: 'Compile Sass assets'
