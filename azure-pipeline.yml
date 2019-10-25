@@ -17,5 +17,6 @@ steps:
   displayName: 'Build the project - Release'
   inputs:
     command: 'build'
-    arguments: '--no-restore'
-    projects: '**/*.csproj'
+
+- script: 'ls'
+  displayName: 'Compile Sass assets'
