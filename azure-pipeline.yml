@@ -3,11 +3,15 @@ pool:
   demands:
     - npm
 
+variables:
+  buildConfiguration: 'Release'
+  dotnetSdkVersion: '3.0.100'
+
 steps:
 - task: DotNetCoreInstaller@0
-  displayName: 'Use .NET Core SDK 2.1.505'
+  displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
   inputs:
-    version: 3.0.100
+    version: '$(dotnetSdkVersion)'
 
 - task: Npm@1
   displayName: 'Run npm install'
@@ -23,9 +27,10 @@ steps:
     command: 'restore'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Build the project - Release'
+  displayName: 'Build the project - $(buildConfiguration)'
   inputs:
     command: 'build'
+    arguments: '--no-restore'
 
 - script: 'ls'
   displayName: 'ls command test'
@@ -36,11 +41,11 @@ steps:
   displayName: 'multi line command test'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Publish the project - Release'
+  displayName: 'Publish the project - $(buildConfiguration)'
   inputs:
     command: 'publish'
     publishWebProjects: false
-    arguments: '--no-build --output $(Build.ArtifactStagingDirectory)/Release'
+    arguments: '--no-build --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
 - task: PublishBuildArtifacts@1
