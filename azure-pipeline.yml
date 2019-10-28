@@ -34,3 +34,15 @@ steps:
     ls
     pwd
   displayName: 'multi line command test'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Publish the project - Release'
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    arguments: '--no-build --output $(Build.ArtifactStagingDirectory)/Release'
+    zipAfterPublish: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  condition: succeeded()
