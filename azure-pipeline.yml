@@ -1,7 +1,5 @@
 pool:
   vmImage: 'Ubuntu-16.04'
-  demands:
-    - npm
 
 variables:
   buildConfiguration: 'Release'
@@ -13,11 +11,6 @@ steps:
   inputs:
     version: '$(dotnetSdkVersion)'
 
-- task: Npm@1
-  displayName: 'Run npm install'
-  inputs:
-    verbose: false
-
 - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info'
 
@@ -25,12 +18,6 @@ steps:
   displayName: 'Restore project dependencies'
   inputs:
     command: 'restore'
-
-- task: DotNetCoreCLI@2
-  displayName: 'Build the project - $(buildConfiguration)'
-  inputs:
-    command: 'build'
-    arguments: '--no-restore'
 
 - script: 'ls'
   displayName: 'ls command test'
@@ -40,13 +27,13 @@ steps:
     pwd
   displayName: 'multi line command test'
 
-- task: DotNetCoreCLI@2
-  displayName: 'Publish the project - $(buildConfiguration)'
-  inputs:
-    command: 'publish'
-    publishWebProjects: false
-    arguments: '--no-build --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
-    zipAfterPublish: true
+- template: templates/build.yml
+  parameters:
+    buildConfiguration: 'Debug'
+
+- template: templates/build.yml
+  parameters:
+    buildConfiguration: 'Release'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
