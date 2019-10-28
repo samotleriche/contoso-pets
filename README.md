@@ -1,4 +1,8 @@
-#Steps to create project
+[![Build Status](https://dev.azure.com/tomasleriche/testProject/_apis/build/status/samotleriche.contoso-pets?branchName=master)](https://dev.azure.com/tomasleriche/testProject/_build/latest?definitionId=1&branchName=master)
+
+# Sample App For Testing Azure Pipelines
+
+### Steps to create project
 
 ```
 . <(wget -q -O - https://aka.ms/build-web-api-net-core-setup)
