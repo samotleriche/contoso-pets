@@ -13,6 +13,6 @@ namespace ContosoPets.Api.Models
         [Range(minimum: 0.01, maximum: (double) decimal.MaxValue)]
         public decimal Price { get; set; }   
 
-        public string Size { get; set; }     
+       // public string Size { get; set; }     
     }
 }
