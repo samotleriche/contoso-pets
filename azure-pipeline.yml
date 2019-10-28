@@ -1,32 +1,40 @@
 pool:
   vmImage: 'Ubuntu-16.04'
-  demands:
-    - npm
+
+variables:
+  buildConfiguration: 'Release'
+  dotnetSdkVersion: '3.0.100'
 
 steps:
 - task: DotNetCoreInstaller@0
-  displayName: 'Use .NET Core SDK 2.1.505'
+  displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
   inputs:
-    version: 3.0.100
+    version: '$(dotnetSdkVersion)'
 
-- task: Npm@1
-  displayName: 'Run npm install'
-  inputs:
-    verbose: false
+- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
+  displayName: 'Write build info'
 
 - task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
   inputs:
     command: 'restore'
-- task: DotNetCoreCLI@2
-  displayName: 'Build the project - Release'
-  inputs:
-    command: 'build'
 
 - script: 'ls'
-  displayName: 'Compile Sass assetsss'
+  displayName: 'ls command test'
   
 - script: |
     ls
     pwd
-  displayName: 'Compile Sass assets'
+  displayName: 'multi line command test'
+
+- template: templates/build.yml
+  parameters:
+    buildConfiguration: 'Debug'
+
+- template: templates/build.yml
+  parameters:
+    buildConfiguration: 'Release'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  condition: succeeded()
