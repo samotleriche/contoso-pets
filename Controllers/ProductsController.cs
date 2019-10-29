@@ -40,7 +40,7 @@ namespace ContosoPets.Api.Controllers
         [HttpGet("test")]
         public void runVode(long id)
         {
-            Console.WriteLine("hi change made!!!");
+            Console.WriteLine("hi change made!!! Another Change");
         }
 
         [HttpPost]
