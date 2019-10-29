@@ -9,6 +9,8 @@ trigger:
     exclude:
     - docs/*
 
+pr: none    
+
 variables:
   buildConfiguration: 'Release'
   dotnetSdkVersion: '3.0.100'
